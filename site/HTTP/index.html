@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>HTTP协议 - Forlight's Docs</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/color-brewer.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="..">Forlight's Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">最近</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../MySQL/" class="dropdown-item">数据库</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">归档</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">计算机系统</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../linux/" class="dropdown-item">Linux系统</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">HTTP协议</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">数通网络</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../IGMP/" class="dropdown-item">IGMP</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">网络安全</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../SQL%E6%B3%A8%E5%85%A5/" class="dropdown-item">SQLI</a>
+</li>
+            
+<li>
+    <a href="../XSS%E6%B3%A8%E5%85%A5/" class="dropdown-item">XSS</a>
+</li>
+            
+<li>
+    <a href="../msf%E6%9E%84%E5%BB%BA%E6%9C%A8%E9%A9%AC/" class="dropdown-item">MSF</a>
+</li>
+            
+<li>
+    <a href="../CTFHub%20WriteUp/" class="dropdown-item">CTFHub WriteUp</a>
+</li>
+            
+<li>
+    <a href="../DVWA%20WriteUp/" class="dropdown-item">DVWA WriteUp</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">软件</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../VMware%20Pro%E5%AE%89%E8%A3%85/" class="dropdown-item">VMware Pro安装</a>
+</li>
+            
+<li>
+    <a href="../typora%E5%AE%89%E8%A3%85%E4%B8%8E%E7%A0%B4%E8%A7%A3/" class="dropdown-item">typora安装与破解</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../about/" class="nav-link">About</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../linux/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../IGMP/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/edit/master/docs/HTTP.md" class="nav-link"><i class="fa-brands fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#http" class="nav-link">HTTP</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#1-http" class="nav-link">1、典型的 HTTP 会话</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2" class="nav-link">2、发送客户端请求</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3" class="nav-link">3、服务器响应结构</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4http-cookie" class="nav-link">4、HTTP Cookie</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5http" class="nav-link">5、HTTP 的重定向</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="http">HTTP</h1>
+<blockquote>
+<p>[!IMPORTANT] </p>
+<p>学习资料<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Guides/Overview">HTTP 概述 - HTTP | MDN</a></p>
+<p>[!TIP]</p>
+<p>实用资料<a href="https://www.runoob.com/http/http-tutorial.html">HTTP 教程 | 菜鸟教程</a></p>
+</blockquote>
+<hr />
+<h2 id="1-http">1、典型的 HTTP 会话</h2>
+<p>在像 HTTP 这样的客户端——服务器（Client-Server）协议中，会话分为三个阶段：</p>
+<ol>
+<li>客户端建立一条 TCP 连接（如果传输层不是 TCP，也可以是其他适合的连接）。</li>
+<li>客户端发送请求并等待应答。</li>
+<li>服务器处理请求并送回应答，回应包括一个状态码和对应的数据。</li>
+</ol>
+<p>从 HTTP/1.1 开始，连接在完成第三阶段后不再关闭，客户端可以再次发起新的请求。这意味着第二步和第三步可以连续进行数次。</p>
+<hr />
+<h2 id="2">2、<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Guides/Session#发送客户端请求">发送客户端请求</a></h2>
+<p>访问 developer.mozilla.org（<code>https://developer.mozilla.org/</code>）的根页面，并告诉服务器用户代理倾向于该页面使用法语展示：</p>
+<pre><code>GET / HTTP/1.1
+Host: developer.mozilla.org
+Accept-Language: fr
+</code></pre>
+<p>注意最后的空行，它把标头与数据块分隔开。由于在 HTTP 标头中没有 <code>Content-Length</code>，数据块是空的，所以服务器可以在收到代表标头结束的空行后就开始处理请求。</p>
+<p>例如，发送表单的结果：</p>
+<pre><code>POST /contact_form.php HTTP/1.1
+Host: developer.mozilla.org
+Content-Length: 64
+Content-Type: application/x-www-form-urlencoded
+
+name=Joe%20User&amp;request=Send%20me%20one%20of%20your%20catalogue
+</code></pre>
+<p>HTTP 定义了一组<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Reference/Methods">请求方法</a>用来指定对目标资源的行为。它们一般是名词，但这些请求方法有时会被叫做 HTTP 动词。最常用的请求方法是 <code>GET</code> 和 <code>POST</code>：</p>
+<ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Reference/Methods/GET"><code>GET</code></a> 方法请求指定的资源。<code>GET</code> 请求应该只被用于获取数据。</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Reference/Methods/POST"><code>POST</code></a> 方法向服务器发送数据，因此会改变服务器状态。这个方法常在 <a href="https://developer.mozilla.org/zh-CN/docs/Learn_web_development/Extensions/Forms">HTML 表单</a>中使用。</li>
+</ul>
+<hr />
+<h2 id="3">3、<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Guides/Session#服务器响应结构">服务器响应结构</a></h2>
+<p>当收到用户代理发送的请求后，Web 服务器就会处理它，并最终送回一个响应。与客户端请求很类似，服务器响应由一系列文本指令组成，并使用 CRLF 分隔，它们被划分为三个不同的块：</p>
+<ol>
+<li>第一行是<em>状态行</em>，包括使用的 HTTP 协议版本，然后是一个状态码（及其人类可读的描述文本）。</li>
+<li>接下来每一行都表示一个 HTTP 标头，为客户端提供关于所发送数据的一些信息（如类型、数据大小、使用的压缩算法、缓存指示）。与客户端请求的头部块类似，这些 HTTP 标头组成一个块，并以一个空行结束。</li>
+<li>最后一块是数据块，包含了响应的数据（如果有的话）。</li>
+</ol>
+<pre><code>HTTP/1.1 301 Moved Permanently
+Server: Apache/2.4.37 (Red Hat)
+Content-Type: text/html; charset=utf-8
+Date: Thu, 06 Dec 2018 17:33:08 GMT
+Location: https://developer.mozilla.org/ （目标资源的新地址，服务器期望用户代理去访问它）
+Keep-Alive: timeout=15, max=98
+Accept-Ranges: bytes
+Via: Moz-Cache-zlb05
+Connection: Keep-Alive
+Content-Length: 325 (如果用户代理无法转到新地址，就显示一个默认页面)
+
+&lt;!DOCTYPE html&gt;… (包含一个网站自定义页面，帮助用户找到丢失的资源)
+</code></pre>
+<blockquote>
+<p>[!NOTE]</p>
+<p>常用状态码</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>状态码</th>
+<th>含义</th>
+<th>渗透时遇到意味着</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>200</strong></td>
+<td>成功</td>
+<td>正常</td>
+</tr>
+<tr>
+<td><strong>301/302</strong></td>
+<td>跳转</td>
+<td>可能有跳转漏洞（开放重定向）</td>
+</tr>
+<tr>
+<td><strong>403</strong></td>
+<td>禁止访问</td>
+<td>有权限控制，值得进一步测</td>
+</tr>
+<tr>
+<td><strong>404</strong></td>
+<td>不存在</td>
+<td>路径不对</td>
+</tr>
+<tr>
+<td><strong>500</strong></td>
+<td>服务器报错</td>
+<td>可能暴露错误信息，可挖信息</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4http-cookie">4、HTTP Cookie</h2>
+<p>Cookie 主要用于以下三个方面：</p>
+<ul>
+<li>会话状态管理</li>
+</ul>
+<p>如用户登录状态、购物车、游戏分数或其他需要记录的信息</p>
+<ul>
+<li>个性化设置</li>
+</ul>
+<p>如用户自定义设置、主题和其他设置</p>
+<ul>
+<li>浏览器行为跟踪</li>
+</ul>
+<p>如跟踪分析用户行为等</p>
+<p>服务器收到 HTTP 请求后，服务器可以在响应标头里面添加一个或多个 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Reference/Headers/Set-Cookie"><code>Set-Cookie</code></a> 选项。浏览器收到响应后通常会保存下 Cookie，并将其放在 HTTP <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Reference/Headers/Cookie"><code>Cookie</code></a> 标头内，向同一服务器发出请求时一起发送。你可以指定一个过期日期或者时间段之后，不能发送 cookie。你也可以对指定的域和路径设置额外的限制，以限制 cookie 发送的位置。</p>
+<p>服务器使用 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Reference/Headers/Set-Cookie"><code>Set-Cookie</code></a> 响应头部向用户代理（一般是浏览器）发送 Cookie 信息。一个简单的 Cookie 可能像这样：</p>
+<pre><code>Set-Cookie: &lt;cookie-name&gt;=&lt;cookie-value&gt;
+</code></pre>
+<p>这指示服务器发送标头告知客户端存储一对 cookie：</p>
+<pre><code>HTTP/1.0 200 OK
+Content-type: text/html
+Set-Cookie: yummy_cookie=choco
+Set-Cookie: tasty_cookie=strawberry
+</code></pre>
+<p>现在，对该服务器发起的每一次新请求，浏览器都会将之前保存的 Cookie 信息通过 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Reference/Headers/Cookie"><code>Cookie</code></a> 请求头部再发送给服务器。</p>
+<pre><code>GET /sample_page.html HTTP/1.1
+Host: www.example.org
+Cookie: yummy_cookie=choco; tasty_cookie=strawberry
+</code></pre>
+<hr />
+<h2 id="5http">5、HTTP 的重定向</h2>
+<p>在 HTTP 协议中，重定向操作由服务器向请求发送特殊的重定向响应而触发。重定向响应包含以 <code>3</code> 开头的<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Reference/Status">状态码</a>，以及 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Reference/Headers/Location"><code>Location</code></a> 标头，其保存着重定向的 URL。</p>
+<p>浏览器在接收到重定向时，它们会立刻加载 <code>Location</code> 标头中提供的新 URL。除了额外的往返操作中会有一小部分性能损失之外，重定向操作对于用户来说是不可见的。</p>
+<p>不同类型的重定向映射可以划分为三个类别：</p>
+<ol>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Guides/Redirections#永久重定向">永久重定向</a>(301、308)</li>
+</ol>
+<p>这种重定向操作是永久性的。它表示原 URL 不应再被使用，而选用新的 URL 替换它。搜索引擎机器人、RSS 阅读器以及其他爬虫将更新资源原始的 URL。</p>
+<ol>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Guides/Redirections#临时重定向">临时重定向</a>(302、303、307)</li>
+</ol>
+<p>有时候请求的资源无法从其标准地址访问，但是却可以从另外的地方访问。在这种情况下，可以使用临时重定向。</p>
+<p>搜索引擎和其他爬虫不会记录新的、临时的 URL。在创建、更新或者删除资源的时候，临时重定向也可以用于显示临时性的进度页面。</p>
+<ol>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Guides/Redirections#特殊重定向">特殊重定向</a>(300、304)</li>
+</ol>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Reference/Status/304"><code>304</code></a>（Not Modified）会使页面跳转到本地的缓存副本中（可能已过时），而 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Reference/Status/300"><code>300</code></a>（Multiple Choice）则是一种手动重定向：将消息主体以 Web 页面形式呈现在浏览器中，列出了可能的重定向链接，用户可以从中进行选择。</p>
+<p>指定重定向的其他方式</p>
+<p>​   HTTP 重定向是创建重定向的最佳方式，但是有时候你并不能控制服务器。针对这些特定的应用情景，可以尝试在页面的head 中添加一个 /meta)元素，并将其 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Reference/Elements/meta#http-equiv"><code>http-equiv</code></a> 属性的值设置为 <code>refresh</code>。当显示页面的时候，浏览器会检测该元素，然后跳转到指定的页面。</p>
+<pre><code>&lt;head&gt;
+  &lt;meta http-equiv=&quot;Refresh&quot; content=&quot;0; URL=http://example.com/&quot; /&gt;
+&lt;/head&gt;
+</code></pre>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Reference/Global_attributes#content"><code>content</code></a> 属性的值开头是一个数字，指示浏览器在等待该数字表示的秒数之后再进行跳转。建议始终将其设置为 <code>0</code> 来获取更好的无障碍体验。</p>
+<p>​   在 JavaScript 中，重定向机制的原理是设置 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/location"><code>window.location</code></a> 的属性值，然后加载新的页面。</p>
+<pre><code>window.location = &quot;https://example.com/&quot;;
+</code></pre>
+<p>与 HTML 重定向机制类似，这种方式并不适用于所有类型的资源，并且显然只有在执行 JavaScript 的客户端上才能使用。另外一方面，它也提供了更多的可能性：比如在只有满足了特定的条件的情况下才可以触发重定向机制的场景。</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

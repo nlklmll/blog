@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Linux系统 - Forlight's Docs</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/color-brewer.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="..">Forlight's Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">最近</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../MySQL/" class="dropdown-item">数据库</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">归档</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">计算机系统</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Linux系统</a>
+</li>
+            
+<li>
+    <a href="../HTTP/" class="dropdown-item">HTTP协议</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">数通网络</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../IGMP/" class="dropdown-item">IGMP</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">网络安全</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../SQL%E6%B3%A8%E5%85%A5/" class="dropdown-item">SQLI</a>
+</li>
+            
+<li>
+    <a href="../XSS%E6%B3%A8%E5%85%A5/" class="dropdown-item">XSS</a>
+</li>
+            
+<li>
+    <a href="../msf%E6%9E%84%E5%BB%BA%E6%9C%A8%E9%A9%AC/" class="dropdown-item">MSF</a>
+</li>
+            
+<li>
+    <a href="../CTFHub%20WriteUp/" class="dropdown-item">CTFHub WriteUp</a>
+</li>
+            
+<li>
+    <a href="../DVWA%20WriteUp/" class="dropdown-item">DVWA WriteUp</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">软件</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../VMware%20Pro%E5%AE%89%E8%A3%85/" class="dropdown-item">VMware Pro安装</a>
+</li>
+            
+<li>
+    <a href="../typora%E5%AE%89%E8%A3%85%E4%B8%8E%E7%A0%B4%E8%A7%A3/" class="dropdown-item">typora安装与破解</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../about/" class="nav-link">About</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../MySQL/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../HTTP/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/edit/master/docs/linux.md" class="nav-link"><i class="fa-brands fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#linux" class="nav-link">Linux</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="linux">Linux</h1>
+<p>命令大全<a href="https://www.runoob.com/linux-command-manual.html">Linux 命令大全 | 菜鸟教程</a></p>
+<h4 id="_1">关机命令</h4>
+<p>shutdown 会给系统计划一个时间关机。它可以被用于停止、关机、重启机器。shutdown 会给系统计划一个时间关机。它可以被用于停止、关机、重启机器。</p>
+<pre><code># shutdown -p now  ### 关闭机器
+# shutdown -H now  ### 停止机器      
+# shutdown -r 09:35 ### 在 09:35am 重启机器
+</code></pre>
+<p>要取消即将进行的关机，只要输入下面的命令：</p>
+<pre><code># shutdown -c
+</code></pre>
+<p>halt 命令通知硬件来停止所有的 CPU 功能，但是仍然保持通电。你可以用它使系统处于低层维护状态。注意在有些情况会它会完全关闭系统。</p>
+<pre><code># halt             ### 停止机器
+# halt -p          ### 关闭机器、关闭电源
+# halt --reboot    ### 重启机器
+</code></pre>
+<p>poweroff 会发送一个 ACPI 信号来通知系统关机。</p>
+<pre><code># poweroff           ### 关闭机器、关闭电源
+# poweroff --halt    ### 停止机器
+# poweroff --reboot  ### 重启机器
+</code></pre>
+<p>reboot 命令 reboot 通知系统重启。</p>
+<pre><code># reboot           ### 重启机器
+# reboot --halt    ### 停止机器
+# reboot -p        ### 关闭机器
+</code></pre>
+<h4 id="_2">忘记密码</h4>
+<p>重启linux系统</p>
+<p><img alt="img" src="../img/4_21.png" /></p>
+<p>3 秒之内要按一下回车，出现如下界面</p>
+<p><img alt="img" src="../img/4_22.png" /></p>
+<p>然后输入e</p>
+<p><img alt="img" src="../img/4_23.png" /></p>
+<p>在 第二行最后边输入 single，有一个空格。具体方法为按向下尖头移动到第二行，按"e"进入编辑模式</p>
+<p><img alt="img" src="../img/4_24.png" /></p>
+<p>在后边加上single 回车</p>
+<p><img alt="img" src="../img/4_25.png" /></p>
+<p>最后按"b"启动，启动后就进入了单用户模式了</p>
+<p><img alt="img" src="../img/4_26.png" /></p>
+<p>此时已经进入到单用户模式了，你可以更改root密码了。更密码的命令为 passwd</p>
+<p><img alt="img" src="../img/4_27.png" /></p>
+<h4 id="_3">处理目录的常用命令</h4>
+<ul>
+<li>ls（英文全拼：list files）: 列出目录及文件名</li>
+<li>cd（英文全拼：change directory）：切换目录</li>
+<li>pwd（英文全拼：print work directory）：显示目前的目录</li>
+<li>mkdir（英文全拼：make directory）：创建一个新的目录</li>
+<li>rmdir（英文全拼：remove directory）：删除一个空的目录</li>
+<li>cp（英文全拼：copy file）: 复制文件或目录</li>
+<li>rm（英文全拼：remove）: 删除文件或目录</li>
+<li>mv（英文全拼：move file）: 移动文件与目录，或修改文件与目录的名称</li>
+</ul>
+<p>你可以使用 <em>man [命令]</em> 来查看各个命令的使用文档，如 ：man cp。</p>
+<h4 id="linux_1">Linux 文件内容查看</h4>
+<p>Linux系统中使用以下命令来查看文件的内容：</p>
+<ul>
+<li>cat 由第一行开始显示文件内容</li>
+<li>tac 从最后一行开始显示，可以看出 tac 是 cat 的倒着写！</li>
+<li>nl  显示的时候，顺道输出行号！</li>
+<li>more 一页一页的显示文件内容</li>
+<li>less 与 more 类似，但是比 more 更好的是，他可以往前翻页！</li>
+<li>head 只看头几行</li>
+<li>tail 只看尾巴几行</li>
+</ul>
+<p>你可以使用 <em>man [命令]</em>来查看各个命令的使用文档，如 ：man cp。</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

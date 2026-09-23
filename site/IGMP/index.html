@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>IGMP - Forlight's Docs</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/color-brewer.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="..">Forlight's Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">最近</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../MySQL/" class="dropdown-item">数据库</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">归档</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">计算机系统</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../linux/" class="dropdown-item">Linux系统</a>
+</li>
+            
+<li>
+    <a href="../HTTP/" class="dropdown-item">HTTP协议</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">数通网络</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">IGMP</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">网络安全</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../SQL%E6%B3%A8%E5%85%A5/" class="dropdown-item">SQLI</a>
+</li>
+            
+<li>
+    <a href="../XSS%E6%B3%A8%E5%85%A5/" class="dropdown-item">XSS</a>
+</li>
+            
+<li>
+    <a href="../msf%E6%9E%84%E5%BB%BA%E6%9C%A8%E9%A9%AC/" class="dropdown-item">MSF</a>
+</li>
+            
+<li>
+    <a href="../CTFHub%20WriteUp/" class="dropdown-item">CTFHub WriteUp</a>
+</li>
+            
+<li>
+    <a href="../DVWA%20WriteUp/" class="dropdown-item">DVWA WriteUp</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">软件</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../VMware%20Pro%E5%AE%89%E8%A3%85/" class="dropdown-item">VMware Pro安装</a>
+</li>
+            
+<li>
+    <a href="../typora%E5%AE%89%E8%A3%85%E4%B8%8E%E7%A0%B4%E8%A7%A3/" class="dropdown-item">typora安装与破解</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../about/" class="nav-link">About</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../HTTP/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../SQL%E6%B3%A8%E5%85%A5/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/edit/master/docs/IGMP.md" class="nav-link"><i class="fa-brands fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#igmp" class="nav-link">IGMP原理</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#igmpv1" class="nav-link">IGMPv1</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#igmpv2" class="nav-link">IGMPv2</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#igmpv3" class="nav-link">IGMPv3</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_9" class="nav-link">各版本间差异</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#igmp-snooping" class="nav-link">IGMP Snooping</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="igmp">IGMP原理</h1>
+<p>组播通信中，组播网络需要将组播数据发送给特定的组播组成员，因此组播网路需要知道组成员的位置与组成员所加的组播组。</p>
+<p>通过IGMP(Internet Group Management Protocol，因特网组管理协议)，组成员可以将加组消息发送给组播网络，从而让组播网络感知到组成员的位置和所加组播组。</p>
+<p>IGMP通过在组播组成员和组播路由器之间交换IGMP报文实现组成员管理功能，IGMP报文封装在IP报文中。</p>
+<p>到目前为止，IGMP有三个版本：</p>
+<p>IGMPv1</p>
+<p>IGMPv2</p>
+<p>IGMPv3</p>
+<p>组播路由器与组成员间交互报文后会生成<strong>IGMP路由表项</strong>与<strong>IGMP组表项</strong>。</p>
+<p>IGMP组表项是由用户主机发送的IGMP加入报文创触发建，用于维护组加入信息并通知组播路由协议(一般是PIM)创建相应(*，G)表项。</p>
+<p>IGMP路由表项的作用主要是用来扩展组播路由表项的出接口。</p>
+<blockquote>
+<p>[!NOTE]</p>
+<p>上游数据通过组播路由到达本地路由器时需要查询~~IGMP路由表项~~(实际是组播路由表)向对应网段的出接口转发</p>
+</blockquote>
+<h2 id="igmpv1">IGMPv1</h2>
+<hr />
+<h3 id="_1">基本概念</h3>
+<p>普遍组查询报文(general query)：查询器向共享网络上所有主机和路透其发送的查询报文，用于查询哪些组播组存在成员。</p>
+<p>成员关系报告报文(report)：主机向查询器发送的报告报文，用于申请加入某个组播组或者应答查询报文。</p>
+<p>由于IGMP报文是组播报文，所以只需要一个组播路由器充当<strong>IGMP查询器(querier)</strong>发送查询报文即可</p>
+<p><img alt="image-20260820131535776" src="../img/image-20260820131535776.png" /></p>
+<h3 id="_2">报文格式</h3>
+<p><img alt="image-20260820131613636" src="../img/image-20260820131613636.png" /></p>
+<h3 id="_3">加组流程</h3>
+<p><img alt="image-20260820131656127" src="../img/image-20260820131656127.png" /></p>
+<blockquote>
+<p>[!NOTE]</p>
+<p>report报文该网段同一组播组主机只需要发出一份即可，所以产生了成员关系报文抑制机制，减少网段上的流量</p>
+</blockquote>
+<h3 id="igmpv1_1">IGMPv1查询器选举机制</h3>
+<p><img alt="image-20260820205203192" src="../img/image-20260820205203192.png" /></p>
+<p>Q:为什么要选举？</p>
+<p>A:因为普遍组查询是组播报文，因此同一网段内只需要一台查询器即可查询所有组成员的加组信息。</p>
+<p>IGMPv1没有基于IGMP的查询器选举机制，所以需要依赖组播路由协议(PIM)进行IGMP查询器选举。</p>
+<p>Q:难道只需要一台路由器发送查询报文？另外的路由器怎么办呢？</p>
+<p>A:是的，因为查询器和非查询器均能收到成员关系报告(目的地址224.0.0.1)，因此均能形成IGMP路由表与IGMP组表项。</p>
+<h3 id="igmpv1_2">IGMPv1组成员离组机制</h3>
+<p>使用超时机制，组成员离开组播组后将不回应普通组查询报文，查询器缺省130s内未收到该网段报告报文，删除表项。</p>
+<p><img alt="image-20260820210727102" src="../img/image-20260820210727102.png" /></p>
+<h2 id="igmpv2">IGMPv2</h2>
+<hr />
+<h3 id="_4">介绍</h3>
+<p>IGMPv2迭代v1，能兼容v1</p>
+<p>v2组成员加组机制与v1一致</p>
+<p>v2增加了离开组机制</p>
+<p>v2增加了查询器选举机制</p>
+<h3 id="_5">报文格式</h3>
+<p>新增两种报文</p>
+<p>成员离开报文(leave)：成员离开组播组时主动向查询器发送的报文，用于宣告自己离开了某个组播组。成员离开报文目的地址为224.0.0.2。</p>
+<p>特定组查询报文(group-specific query)：查询器向共享网段内指定组播组发送的查询报文，用于查询该组播组是否存在成员。特定组查询报文目的地址为所查询组播组的组地址。</p>
+<p><img alt="image-20260820212958889" src="../img/image-20260820212958889.png" /></p>
+<p>IGMPv2查询器选举机制</p>
+<p><img alt="image-20260820213032239" src="../img/image-20260820213032239.png" /></p>
+<p>非查询器定时器超时未收到查询器发送的查询报文，认为失效，发起新的查询器选举</p>
+<p>IGMPv2组成员离开机制</p>
+<p><img alt="image-20260820213343470" src="../img/image-20260820213343470.png" /></p>
+<h2 id="igmpv3">IGMPv3</h2>
+<hr />
+<p>IGMPv3主要是为了配合SSM(source-specific multicast)模型发展起来的，提供了在报文中携带组播源信息的能力，即主机可以对组播源进行选择。</p>
+<p><img alt="image-20260820213719853" src="../img/image-20260820213719853.png" /></p>
+<h3 id="_6">介绍</h3>
+<p>相比v2新增特定源组查询报文(group-and-source-specific query)。</p>
+<p>IGMPv3成员关系报告报文不仅包含主机想要加入的组播组，而且包含主机想要接收来自哪些组播源的数据</p>
+<p>由于同个组播组的不同成员可能希望接受来自不同源的组播，因此IGMPv3无需成员关系报告报文抑制机制。</p>
+<p>IGMPv3没有定义专门的成员离开报文，成员离开通过特定类型的报告报文来传达。</p>
+<h3 id="_7">报文格式</h3>
+<p>普遍组查询报文(general query)：同v1，v2</p>
+<p>特定组查询报文(group-specific query)：同v2</p>
+<p>特定源组查询报文(group-and-source-specific query)：该报文用于查询该组成员是否愿意接收特定源发送的数据。特定源组查询通过在报文中携带一个或多个组播源地址来达到这一目的。</p>
+<p><img alt="image-20260820214850334" src="../img/image-20260820214850334.png" /></p>
+<h3 id="_8">成员关系报告报文</h3>
+<p>除了通告组成员的加组信息，还能通告组成员希望接收的组播源信息。可选择接收或者过滤。目的地址为224.0.0.22。</p>
+<p><img alt="image-20260820215103851" src="../img/image-20260820215103851.png" /></p>
+<h3 id="igmpv3_1">IGMPv3组成员离组机制</h3>
+<p>IGMPv3没有专门的成员离开报文，成员离开需要借助组成员关系报告实现。</p>
+<p>IGMP查询器在收到改变源组对应关系的成员关系报告后，会发送特定源组查询报文，确认是否还有组成员存在。</p>
+<h2 id="_9">各版本间差异</h2>
+<hr />
+<p><img alt="image-20260820215410074" src="../img/image-20260820215410074.png" /></p>
+<h2 id="igmp-snooping">IGMP Snooping</h2>
+<hr />
+<h3 id="_10">以太网的组播转发问题</h3>
+<p>当组播数据从最后一跳路由器发往组播组成员时，往往会经过交换机。由于组播数据的目的MAC地址是组播MAC地址，默认情况下交换机将泛洪此类数据帧，有可能导致不同组的组播流量会被别组的成员接收。</p>
+<p>IGMP Snooping功能可以控制组播流量在以太网的泛洪范围，避免不同组的组播流量被别组成员接收。</p>
+<p><img alt="image-20260820222038745" src="../img/image-20260820222038745.png" /></p>
+<h3 id="_11">工作原理</h3>
+<p>IGMP Snooping设备通过监听IGMP报文，形成二层组播转发表，并决定接口类型(路由器端口和成员端口)</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
