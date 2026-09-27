@@ -15,7 +15,7 @@
         <link href="../css/solid.min.css" rel="stylesheet">
         <link href="../css/v4-font-face.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
-        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/color-brewer.min.css" >
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/darcula.min.css" >
         <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
         <script>hljs.highlightAll();</script> 
@@ -79,6 +79,10 @@
     <ul class="dropdown-menu">
             
 <li>
+    <a href="../%E6%90%AD%E5%BB%BAsqli-labs%E9%9D%B6%E5%9C%BA%28win%29/" class="dropdown-item">搭建sqli-labs靶场(win)</a>
+</li>
+            
+<li>
     <a href="../SQL%E6%B3%A8%E5%85%A5/" class="dropdown-item">SQLI</a>
 </li>
             
@@ -95,13 +99,17 @@
 </li>
             
 <li>
+    <a href="../%E6%90%AD%E5%BB%BADVWA%E9%9D%B6%E5%9C%BA/" class="dropdown-item">搭建DVWA靶场</a>
+</li>
+            
+<li>
     <a href="../DVWA%20WriteUp/" class="dropdown-item">DVWA WriteUp</a>
 </li>
     </ul>
   </li>
                                     
   <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">软件</a>
+    <a href="#" class="dropdown-item">软件/工具</a>
     <ul class="dropdown-menu">
             
 <li>
@@ -156,12 +164,117 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#mysql" class="nav-link">MySQL</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#debianubuntumysql" class="nav-link">Debian/Ubuntu上安装MySQL</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#mysql_1" class="nav-link">MySQL基本命令</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#mysql_2" class="nav-link">MySQL查询语句</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-</div>
+<h1 id="mysql">MySQL</h1>
+<p>参考文档： <a href="https://www.runoob.com/mysql/mysql-tutorial.html">MySQL 教程|菜鸟教程</a></p>
+<h2 id="debianubuntumysql">Debian/Ubuntu上安装MySQL</h2>
+<hr />
+<p>官方说明文档：
+<a href="https://dev.mysql.com/doc/refman/8.4/en/linux-installation-apt-repo.html#apt-repo-setup">https://dev.mysql.com/doc/refman/8.4/en/linux-installation-apt-repo.html#apt-repo-setup</a></p>
+<p>需要注意：直接<code>apt install</code>安装会提示</p>
+<pre><code class="language-bash">Package mysql-server is not available, but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
+However the following packages replace it:
+  mariadb-server
+
+E: Package 'mysql-server' has no installation candidate
+</code></pre>
+<p>是因为在 Debian/Ubuntu 等系统的默认软件源中，mysql-server 包已经被 mariadb-server 所替代。</p>
+<p>所以需要按照官方文档顺序先安装deb文件，然后更新apt，再使用apt安装。</p>
+<p>1.下载发布包。先访问 <a href="https://dev.mysql.com/downloads/repo/apt/">https://dev.mysql.com/downloads/repo/apt/</a>
+点击<code>Download</code>,点击<code>No thanks, just start my download.</code>或者复制下载链接，使用</p>
+<pre><code class="language-bash">curl -O https://dev.mysql.com/get/mysql-apt-config_0.8.40-1_all.deb&lt;下载链接&gt;
+</code></pre>
+<p>2.安装发布包，w.x.y-z对应版本号例如0.8.40-1。</p>
+<pre><code class="language-bash">sudo dpkg -i mysql-apt-config_w.x.y-z_all.deb
+</code></pre>
+<p>3.安装过程中会弹出要求选择服务器和其他组件版本，不确定选第一个页面<code>ok</code>，可以随时更改。</p>
+<p>4.更新apt。</p>
+<pre><code class="language-bash">sudo apt-get update
+</code></pre>
+<p>5.使用APT安装MySQL</p>
+<pre><code class="language-bash">sudo apt-get install mysql-server
+</code></pre>
+<p>安装过程中，你需要输入密码 你MySQL安装的根用户。</p>
+<p>安装完成自动启动MySQL服务</p>
+<p>查看MySQL服务状态</p>
+<pre><code class="language-bash">systemctl status mysql
+</code></pre>
+<p>启动停止MySQL服务都使用标准<code>systemctl</code>命令</p>
+<h2 id="mysql_1">MySQL基本命令</h2>
+<hr />
+<p>1.登录MySQL数据库。启动服务后，通过以下命令来连接到Mysql服务器，密码不显示。</p>
+<pre><code class="language-bash">sudo mysql -u root -p
+Enter password:*******
+</code></pre>
+<p>2.查看数据库。</p>
+<pre><code class="language-mysql">mysql&gt; show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+</code></pre>
+<p>3.创建数据库，IF NOT EXISTS参数表示如果数据库不存在才执行操作。</p>
+<pre><code class="language-mysql">create DATABASE [IF NOT EXISTS] 数据库名称;
+</code></pre>
+<p>4.删除数据库，IF EXISTS参数表示如果数据库存在才执行操作。</p>
+<pre><code class="language-mysql">drop DATABASE [IF EXISTS] 数据库名称;
+</code></pre>
+<p>5.选择数据库。</p>
+<pre><code class="language-mysql">use 数据库名称;
+</code></pre>
+<p>6.创建数据表，table_name表名，column列名，datatype数据类型。</p>
+<pre><code class="language-mysql">CREATE TABLE table_name (
+    column1 datatype,
+    column2 datatype,
+    ...
+);
+</code></pre>
+<p>7.删除数据表。</p>
+<pre><code class="language-mysql">DROP TABLE [IF EXISTS] table_name;  -- 会检查是否存在，如果存在则删除
+</code></pre>
+<p>8.插入数据，table_name表名，column列名，value数值</p>
+<pre><code class="language-mysql">INSERT INTO table_name (column1, column2, column3, ...)
+VALUES (value1, value2, value3, ...);
+</code></pre>
+<h2 id="mysql_2">MySQL查询语句</h2>
+<p>1.MySQL查询数据</p>
+<pre><code class="language-mysql">SELECT column1, column2, ...
+FROM table_name
+[WHERE condition]
+[ORDER BY column_name [ASC | DESC]]
+[LIMIT number];
+</code></pre>
+<p><code>WHERE condition</code> 是一个可选的子句，用于指定过滤条件，只返回符合条件的行。</p>
+<p><code>ORDER BY column_name [ASC | DESC]</code> 是一个可选的子句，用于指定结果集的排序顺序，默认是升序（ASC）。</p>
+<p><code>LIMIT number</code> 是一个可选的子句，用于限制返回的行数。</p>
+<p>2.where子句</p></div>
             </div>
         </div>
 
