@@ -264,6 +264,7 @@ Enter password:*******
 VALUES (value1, value2, value3, ...);
 </code></pre>
 <h2 id="mysql_2">MySQL查询语句</h2>
+<hr />
 <p>1.MySQL查询数据</p>
 <pre><code class="language-mysql">SELECT column1, column2, ...
 FROM table_name
@@ -274,7 +275,19 @@ FROM table_name
 <p><code>WHERE condition</code> 是一个可选的子句，用于指定过滤条件，只返回符合条件的行。</p>
 <p><code>ORDER BY column_name [ASC | DESC]</code> 是一个可选的子句，用于指定结果集的排序顺序，默认是升序（ASC）。</p>
 <p><code>LIMIT number</code> 是一个可选的子句，用于限制返回的行数。</p>
-<p>2.where子句</p></div>
+<p>2.where子句</p>
+<pre><code class="language-mysql">SELECT column1, column2, ...
+FROM table_name
+WHERE condition;
+</code></pre>
+<p>可以指定多个表，表之间用<code>，</code>分割</p>
+<p>可以用<code>AND</code>或<code>OR</code>指定一个或多个条件</p>
+<p>可以用<code>&gt;,&lt;,=,!=</code>等操作符</p>
+<p><code>like</code>模糊匹配</p>
+<p>还有<code>IN,NOT,BETWEEN,IS NULL,IS NOT NULL</code>等条件</p>
+<p>MySQL的where子句的字符串默认不区分大小写。可以用<strong>BINARY</strong>关键字来设定 WHERE 子句的字符串比较是区分大小写。如：</p>
+<pre><code class="language-mysql">SELECT * from runoob_tbl WHERE BINARY runoob_author='RUNOOB.COM';
+</code></pre></div>
             </div>
         </div>
 
