@@ -256,12 +256,42 @@ Enter password:*******
     ...
 );
 </code></pre>
-<p>7.删除数据表。</p>
+<p>7.修改数据表</p>
+<p>添加列</p>
+<pre><code class="language-mysql">ALTER TABLE table_name
+ADD COLUMN new_column_name datatype;
+</code></pre>
+<p>修改列的数据类型</p>
+<pre><code class="language-mysql">ALTER TABLE TABLE_NAME
+MODIFY COLUMN column_name new_datatype;
+</code></pre>
+<p>修改列名</p>
+<pre><code class="language-mysql">ALTER TABLE table_name
+CHANGE COLUMN old_column_name new_column_name datatype;
+</code></pre>
+<p>删除列</p>
+<pre><code class="language-mysql">ALTER TABLE table_name
+DROP COLUMN column_name;
+</code></pre>
+<p>修改表名</p>
+<pre><code class="language-mysql">ALTER TABLE old_table_name
+RENAME TO new_table_name;
+</code></pre>
+<p>8.删除数据表。</p>
 <pre><code class="language-mysql">DROP TABLE [IF EXISTS] table_name;  -- 会检查是否存在，如果存在则删除
 </code></pre>
-<p>8.插入数据，table_name表名，column列名，value数值</p>
+<p>9.插入数据，table_name表名，column列名，value数值</p>
 <pre><code class="language-mysql">INSERT INTO table_name (column1, column2, column3, ...)
 VALUES (value1, value2, value3, ...);
+</code></pre>
+<p>10.修改/更新数据，一般where筛选行，column筛选列，可一次性修改多个列数据</p>
+<pre><code class="language-mysql">UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+</code></pre>
+<p>11.删除数据</p>
+<pre><code class="language-mysql">DELETE FROM table_name
+WHERE condition;
 </code></pre>
 <h2 id="mysql_2">MySQL查询语句</h2>
 <hr />
@@ -287,6 +317,47 @@ WHERE condition;
 <p>还有<code>IN,NOT,BETWEEN,IS NULL,IS NOT NULL</code>等条件</p>
 <p>MySQL的where子句的字符串默认不区分大小写。可以用<strong>BINARY</strong>关键字来设定 WHERE 子句的字符串比较是区分大小写。如：</p>
 <pre><code class="language-mysql">SELECT * from runoob_tbl WHERE BINARY runoob_author='RUNOOB.COM';
+</code></pre>
+<p>3.like子句</p>
+<p>LIKE 子句是在 MySQL 中用于在 WHERE 子句中进行模糊匹配的关键字。它通常与通配符一起使用，用于搜索符合某种模式的字符串。
+LIKE 子句中使用百分号<code>%</code>字符来表示任意字符，类似于UNIX或正则表达式中的星号<code>*</code>。</p>
+<p>如果没有使用百分号<code>%</code>, LIKE 子句与等号<code>=</code>的效果是一样的。</p>
+<p>百分号通配符 % ：<code>%</code> 通配符表示零个或多个字符，标识这有未知数量字符。例如，<code>'a%'</code> 匹配以字母 'a' 开头的任何字符串。</p>
+<p>下划线通配符 _ ：<code>_</code> 通配符表示一个字符，标识该位置占一个模糊字符。例如，<code>'_r%'</code> 匹配第二个字母为 'r' 的任何字符串。</p>
+<p>不区分大小写：子句末尾加上<code>COLLATE utf8mb4_general_ci</code></p>
+<p>4.union操作符</p>
+<p>MySQL UNION 操作符用于连接两个以上的 SELECT 语句的结果组合到一个结果集合，并去除重复的行。使用 <code>UNION ALL</code> 可以不去除重复行。</p>
+<p>UNION 操作符必须由两个或多个 SELECT 语句组成，每个 SELECT 语句的列数和对应位置的数据类型必须相同。</p>
+<pre><code class="language-mysql">SELECT column1, column2, ...
+FROM table1
+WHERE condition1
+UNION
+SELECT column1, column2, ...
+FROM table2
+WHERE condition2
+[ORDER BY column1, column2, ...];
+</code></pre>
+<p>ORDER BY 子句是一个可选的子句，用于指定合并后的结果集的排序顺序。</p>
+<p>5.order by子句，升序（ASC）降序（DESC）</p>
+<pre><code class="language-mysql">SELECT column1, column2, ...
+FROM table_name
+ORDER BY column1 [ASC | DESC], column2 [ASC | DESC], ...;
+</code></pre>
+<p>表达式排序，按计算后的值排序</p>
+<pre><code class="language-mysql">SELECT product_name, price * discount_rate AS discounted_price
+FROM products
+ORDER BY discounted_price DESC;
+</code></pre>
+<p>拼音排序</p>
+<p>如果字符集采用的是 gbk(汉字编码字符集)，直接在查询语句后边添加 ORDER BY：</p>
+<pre><code class="language-mysql">SELECT * 
+FROM runoob_tbl
+ORDER BY runoob_title;
+</code></pre>
+<p>如果字符集采用的是 utf8(万国码)，需要先对字段进行转码然后排序：</p>
+<pre><code class="language-mysql">SELECT * 
+FROM runoob_tbl
+ORDER BY CONVERT(runoob_title using gbk);
 </code></pre></div>
             </div>
         </div>
